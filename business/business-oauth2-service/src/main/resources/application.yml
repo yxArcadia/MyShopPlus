@@ -1,0 +1,75 @@
+spring:
+  application:
+    name: business-oauth2
+  redis:
+    host: 49.235.112.43
+    port: 6379
+    lettuce:
+      # 连接池配置
+      pool:
+        # 连接池中的最小空闲连接，默认 0
+        min-idle: 0
+        # 连接池中的最大空闲连接，默认 8
+        max-idle: 8
+        # 连接池最大阻塞等待时间（使用负值表示没有限制），默认 -1ms
+        max-wait: -1ms
+        # 连接池最大连接数（使用负值表示没有限制），默认 8
+        max-active: 8
+      # Redis 高可用集群，由于 K8S 帮我们实现了高可用，这个可以忽略了
+    #    sentinel:
+    #      master: mymaster
+    #      nodes: ${base.config.redis.hostname}:26379
+  main:
+    allow-bean-definition-overriding: true
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 49.235.112.43:8848
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    jdbc-url: jdbc:mysql://49.235.112.43:3307/mplus_ums_admin?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Hongkong
+    username: root
+    password: 123456
+    hikari:
+      minimum-idle: 5
+      idle-timeout: 600000
+      maximum-pool-size: 10
+      auto-commit: true
+      pool-name: MyHikariCP
+      max-lifetime: 1800000
+      connection-timeout: 30000
+      connection-test-query: SELECT 1
+dubbo:
+  scan:
+    base-packages: cn.yxvk.myshop.plus.business.controller,cn.yxvk.myshop.plus.business.service
+  protocol:
+    name: dubbo
+    port: -1
+    serialization: kryo
+  registry:
+    address: nacos://49.235.112.43
+    port: 8848
+#开启okhttp
+feign:
+  okhttp:
+    enabled: true
+  httpclient:
+    enabled: false
+  sentinel:
+    enabled: true
+server:
+  port: 9001
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+business:
+  oauth2:
+    grant_type: password
+    client_id: client
+    client_secret: secret
