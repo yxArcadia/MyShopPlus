@@ -4,11 +4,11 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>cn.yxvk.myshop.plus</groupId>
-        <artifactId>parent</artifactId>
+        <artifactId>configuration</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <artifactId>configuration</artifactId>
-    <packaging>pom</packaging>
+    <artifactId>configuration-swagger</artifactId>
+    <packaging>jar</packaging>
     <url>http://www.funtl.com</url>
     <inceptionYear>2018-Now</inceptionYear>
     <licenses>
@@ -24,9 +24,15 @@
             <email>lee.lusifer@gmail.com</email>
         </developer>
     </developers>
-    <modules>
-        <module>configuration-feign</module>
-        <module>configuration-sentinel</module>
-        <module>configuration-swagger</module>
-    </modules>
+    <dependencies>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
 </project>

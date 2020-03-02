@@ -14,6 +14,9 @@ import cn.yxvk.myshop.plus.dto.UmsAdminLoginLogDTO;
 import cn.yxvk.myshop.plus.feign.MessageFeign;
 import cn.yxvk.myshop.plus.provider.api.UmsAdminService;
 import cn.yxvk.myshop.plus.provider.domain.UmsAdmin;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
+import io.swagger.annotations.ApiOperation;
 import okhttp3.Response;
 import org.apache.dubbo.config.annotation.Reference;
 import org.springframework.beans.factory.annotation.Value;
@@ -60,7 +63,11 @@ public class LoginController {
     private MessageService messageService;
     @Reference(version = "1.0.0")
     private UmsAdminService umsAdminService;
-
+    @ApiOperation(value = "管理员登录")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "username", value = "用户名", required = true, dataType = "int", paramType = "path"),
+            @ApiImplicitParam(name = "password", value = "密码", required = true, dataType = "int", paramType = "path"),
+    })
     @PostMapping("user/login")
     public ResponseResult<Map<String,Object>> login(@RequestBody LoginParam loginParam,HttpServletRequest request){
         Map<String,Object> result=new HashMap<>(5);

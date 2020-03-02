@@ -91,9 +91,21 @@
         </dependency>
     </dependencies>
     <modules>
+        <!--管理系统模块-->
+        <!--管理系统用户-->
         <module>provider-ums-admin-api</module>
         <module>provider-ums-admin-service</module>
+        <!--管理系统登录日志api-->
         <module>provider-ums-admin-login-log-api</module>
         <module>provider-ums-admin-login-log-service</module>
+        <!--统计api-->
+        <module>provider-statistics-api</module>
+        <module>provider-statistics-service</module>
+        <!--商品内容api-->
+        <module>provider-goods-contents-api</module>
+        <module>provider-goods-contents-service</module>
+        <!--商品api-->
+        <module>provider-goods-api</module>
+        <module>provider-goods-service</module>
     </modules>
 </project>

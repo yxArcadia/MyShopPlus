@@ -57,7 +57,6 @@
             <groupId>io.github.openfeign</groupId>
             <artifactId>feign-okhttp</artifactId>
         </dependency>
-
         <!-- Projects Begin -->
         <dependency>
             <groupId>cn.yxvk.myshop.plus</groupId>
@@ -72,6 +71,11 @@
         <dependency>
             <groupId>cn.yxvk.myshop.plus</groupId>
             <artifactId>configuration-feign</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>cn.yxvk.myshop.plus</groupId>
+            <artifactId>configuration-swagger</artifactId>
             <version>${project.parent.version}</version>
         </dependency>
     </dependencies>
