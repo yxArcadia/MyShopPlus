@@ -23,9 +23,9 @@ import java.util.UUID;
 @RequestMapping(value = "upload")
 public class UploadController {
     private static final String ENDPOINT = "oss-cn-hongkong.aliyuncs.com";
-    private static final String ACCESS_KEY_ID = "LTAI4FwJQUU2qjDGqAp8omWf";
-    private static final String ACCESS_KEY_SECRET = "ZCpqOG9QiM56eEPDVrz9SxvITL87nF";
-    private static final String BUCKET_NAME = "yx-myshop";
+    private static final String ACCESS_KEY_ID = "";
+    private static final String ACCESS_KEY_SECRET = "";
+    private static final String BUCKET_NAME = "";
     /**
      * 文件上传
      *

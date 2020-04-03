@@ -2,7 +2,7 @@ spring:
   application:
     name: business-oauth2
   redis:
-    host: 49.235.112.43
+    host: 116.63.136.7
     port: 6379
     lettuce:
       # 连接池配置
@@ -27,11 +27,11 @@ spring:
   cloud:
     nacos:
       discovery:
-        server-addr: 49.235.112.43:8848
+        server-addr: 116.63.136.7:8848
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
-    jdbc-url: jdbc:mysql://49.235.112.43:3307/mplus_ums_admin?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Hongkong
+    jdbc-url: jdbc:mysql://116.63.136.7:3307/mplus_ums_admin?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Hongkong
     username: root
     password: 123456
     hikari:
@@ -51,7 +51,7 @@ dubbo:
     port: -1
     serialization: kryo
   registry:
-    address: nacos://49.235.112.43
+    address: nacos://116.63.136.7
     port: 8848
 #开启okhttp
 feign:

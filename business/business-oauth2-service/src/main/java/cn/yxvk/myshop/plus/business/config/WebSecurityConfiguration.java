@@ -49,7 +49,7 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     public void configure(WebSecurity web) throws Exception {
         //放行
-        web.ignoring().antMatchers("/user/login");
+        web.ignoring().antMatchers("/user/login").antMatchers("/swagger-ui.html");
     }
 
     @Override

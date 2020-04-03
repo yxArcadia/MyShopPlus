@@ -4,7 +4,7 @@ base:
       hostname: localhost
       port: 9001
     nacos:
-      hostname: 49.235.112.43
+      hostname: 116.63.136.7
       port: 8848
 spring:
   application:
@@ -21,7 +21,7 @@ spring:
     stream:
       rocketmq:
         binder:
-          name-server: 119.3.173.20:9876
+          name-server: 116.63.136.7:9876
       bindings:
         admin-login-log-topic: {destination: admin-login-log-topic, content-type: application/json}
 security:
@@ -41,7 +41,7 @@ dubbo:
     port: -1
     serialization: kryo
   registry:
-    address: nacos://49.235.112.43:8848
+    address: nacos://116.63.136.7:8848
     port: 80
 server:
   port: 10002
